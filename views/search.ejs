@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="standard-body">
+    <div class="container">
+        <div class="header">
+            <h1 style="margin: 0; color: #2c3e50;">Search Results</h1>
+            <a href="/" class="btn" style="background: #95a5a6;">&larr; Back to Courses</a>
+        </div>
+
+        <p style="margin-bottom: 20px;">Showing results for: <strong>
+                <%= query %>
+            </strong></p>
+
+        <% if (results.length===0) { %>
+            <p>No notes found matching your search.</p>
+            <% } else { %>
+                <ul class="manage-notes-list">
+                    <% results.forEach(note=> { %>
+                        <li>
+                            <div class="note-info">
+                                <strong>
+                                    <%= note.course %>
+                                </strong> &gt; Sem <%= note.semester %> &gt; <%= note.subject %><br>
+                                        <a href="/download/<%= note.id %>" target="_blank" class="filename"
+                                            style="text-decoration: none; color: #2980b9; font-size: 1.1em; display: inline-block; margin-top: 5px;">
+                                            <%= note.original_filename %>
+                                        </a>
+                            </div>
+                        </li>
+                        <% }); %>
+                </ul>
+                <% } %>
+    </div>
+</body>
+
+</html>

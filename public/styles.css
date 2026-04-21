@@ -1,0 +1,354 @@
+/* --- General Base Styles --- */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  margin: 0;
+}
+
+.standard-body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* --- Index (Student Portal) Styles --- */
+.container {
+  min-width: 560px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.course-card {
+  display: block;
+  padding: 20px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-left: 5px solid #3498db;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #2c3e50;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.course-card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.course {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+
+.semester {
+  margin-left: 20px;
+  color: #27ae60;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.subject {
+  margin-left: 40px;
+  color: #e67e22;
+}
+
+.notes-list {
+  margin-left: 60px;
+  list-style: none;
+  padding: 0;
+}
+
+.notes-list li {
+  background: #f8f9fa;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border-left: 4px solid #3498db;
+}
+
+.notes-list a {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: 500;
+}
+
+.notes-list a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #3498db;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+/* --- Search Bar Styles --- */
+.search-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+.search-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.search-btn {
+  cursor: pointer;
+  border: none;
+}
+
+/* --- Login Page Styles --- */
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px;
+}
+.login-box h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.login-box label {
+  font-weight: bold;
+  color: #555;
+}
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.login-box button {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.login-box button:hover {
+  background-color: #2980b9;
+}
+.login-box .message {
+  color: #dc3545;
+  background: #f8d7da;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #3498db;
+  text-decoration: none;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Upload Page Styles --- */
+.upload-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+.header-actions a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+.header-actions a:hover {
+  text-decoration: underline;
+}
+.upload-container h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+.upload-container label {
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+.upload-container input[type="text"],
+.upload-container input[type="number"],
+.upload-container input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.upload-container button {
+  width: 100%;
+  background-color: #27ae60;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.upload-container button:hover {
+  background-color: #219653;
+}
+.upload-container .message {
+  color: #155724;
+  background: #d4edda;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.manage-notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+.manage-notes-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+  border-left: 4px solid #34495e;
+}
+.note-info {
+  font-size: 0.9em;
+  color: #555;
+}
+.note-info .filename {
+  color: #2c3e50;
+  font-weight: bold;
+}
+.manage-notes-list li form {
+  margin-top: 15px;
+  align-self: flex-end;
+}
+.upload-container button.delete-btn {
+  background-color: #e74c3c;
+  width: auto;
+  padding: 8px 15px;
+}
+.upload-container button.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* --- Course Page Accordion --- */
+.container details {
+  margin-bottom: 15px;
+  background: #fafbfc;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.container details > summary.semester {
+  position: relative;
+  margin-left: 0 !important; /* Override default semester margin */
+  padding-left: 1.5em; /* Space for the icon */
+  cursor: pointer;
+  border-bottom: none !important; /* Override default semester border */
+  outline: none;
+  font-weight: bold;
+  font-size: 1.17em;
+  list-style: none; /* Hide default marker */
+}
+
+.container details > summary.semester::-webkit-details-marker {
+  display: none; /* Hide default marker for Webkit */
+}
+
+.container details > summary.semester::before {
+  content: "+";
+  position: absolute;
+  left: 0.2em;
+  top: -2px;
+  color: #3498db;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.container details[open] > summary.semester::before {
+  content: "−"; /* Unicode minus sign */
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="standard-body">
+    <div class="upload-container">
+        <div class="header-actions">
+            <a href="/upload">&larr; Back to Uploads</a>
+            <a href="/logout" style="color: #e74c3c;">Logout</a>
+        </div>
+
+        <h2>Manage Access Codes</h2>
+
+        <% if (typeof message !=='undefined' && message) { %>
+            <div class="message">
+                <%= message %>
+            </div>
+            <% } %>
+
+                <form action="/admin/update-code" method="POST">
+                    <label>Select Role to Update:</label>
+                    <select name="target_role" required
+                        style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: inherit;">
+                        <option value="teacher">Teacher</option>
+                        <option value="admin">Admin</option>
+                    </select>
+
+                    <label>New Access Code:</label>
+                    <input type="text" name="new_access_code" placeholder="Enter new code" required>
+
+                    <button type="submit" style="background-color: #f39c12;">Update Access Code</button>
+                </form>
+
+                <hr style="margin: 40px 0 20px; border: none; border-top: 1px solid #eee;">
+                <h2>Current Roles Configuration</h2>
+
+                <ul class="manage-notes-list">
+                    <% users.forEach(user=> { %>
+                        <li>
+                            <div class="note-info">
+                                <strong style="text-transform: capitalize; font-size: 1.1em; color: #2c3e50;">Role: <%=
+                                        user.role %></strong><br>
+                                <span class="filename" style="margin-top: 5px; display: inline-block;">Current Code: <%=
+                                        user.access_code %></span>
+                            </div>
+                        </li>
+                        <% }); %>
+                </ul>
+
+    </div>
+</body>
+
+</html>

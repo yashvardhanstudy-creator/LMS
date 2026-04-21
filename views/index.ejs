@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Notes Portal</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="standard-body">
+    <div class="container">
+        <div class="header">
+            <h1 style="margin: 0; color: #2c3e50;">Courses</h1>
+            <a href="/login" class="btn">Upload</a>
+        </div>
+
+        <!-- <form action="/search" method="GET" class="search-form">
+            <input type="text" name="q" placeholder="Search notes by file name..." class="search-input" required>
+            <button type="submit" class="btn search-btn">Search</button>
+        </form> -->
+
+        <% if (courses.length===0) { %>
+            <p>No courses available yet.</p>
+            <% } else { %>
+                <div class="course-list">
+                    <% courses.forEach(course=> { %>
+                        <a href="/course/<%= encodeURIComponent(course.course) %>" class="course-card">
+                            <h2>
+                                <%= course.course %>
+                            </h2>
+                        </a>
+                        <% }); %>
+                </div>
+                <% } %>
+    </div>
+</body>
+
+</html>

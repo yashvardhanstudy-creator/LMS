@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Notes: <%= courseName %>
+    </title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="standard-body">
+    <div class="container">
+        <div class="header">
+            <h1 style="margin: 0; color: #2c3e50;">
+                <%= courseName %>
+            </h1>
+            <a href="/" class="btn" style="background: #95a5a6;">&larr; Back to Courses</a>
+        </div>
+
+        <form action="/search" method="GET" class="search-form">
+            <input type="hidden" name="course" value="<%= courseName %>">
+            <label for="q"></label>
+            <input type="text" name="q" placeholder="Search notes by file name..." class="search-input" required>
+            <button type="submit" class="btn search-btn">Search</button>
+        </form>
+
+        <% if (Object.keys(groupedNotes).length===0) { %>
+            <p>No notes available for this course yet.</p>
+            <% } %>
+
+                <% for (const semester in groupedNotes) { %>
+                    <details>
+                        <summary class="semester">Semester: <%= semester %>
+                        </summary>
+
+                        <% for (const subject in groupedNotes[semester]) { %>
+                            <h4 class="subject" style="margin-left: 20px;">Subject: <%= subject %>
+                            </h4>
+
+                            <ul class="notes-list" style="margin-left: 40px;">
+                                <% groupedNotes[semester][subject].forEach(note=> { %>
+                                    <li>
+                                        <a href="/download/<%= note.id %>" target="_blank">
+                                            <%= note.original_filename %>
+                                        </a>
+                                    </li>
+                                    <% }); %>
+                            </ul>
+                            <% } %>
+                    </details>
+                    <% } %>
+    </div>
+</body>
+
+</html>
