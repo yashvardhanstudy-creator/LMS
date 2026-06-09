@@ -2,4 +2,3 @@ uploads
 daemon
 *.log
 *.pdf
-.env
